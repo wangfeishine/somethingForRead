@@ -1,0 +1,54 @@
+Ctrl + N              光标下移一行
+Ctrl + P              光标向上一行
+
+Ctrl + G(F1）        帮助文档
+Ctrl + X(F2）        退出
+Ctrl + O(F3）        保存
+Ctrl + J(F4）        目前来看，应该是按照某一标准去自动处理段落
+Ctrl + R(F5）        将另一个文件的内容读入当前位置
+Ctrl + W(F6）        查找
+Ctrl + Y(F7）        向上翻页
+Ctrl + V(F8）        向下翻页
+Ctrl + K(F9）        剪切当前行
+Ctrl + U(F10)        粘贴
+Ctrl + C(F11)        显示当前行，当前列
+Ctrl + T(F12)        按照字典check（这边可以在深入）
+
+Alt + \              回开头行
+Alt + /              去结尾
+
+Alt + G              前往指定行指定列
+Alt + R              替换
+Alt + A              标记起始，上下可以反白显示，有很大用处
+Alt + W              搜索时，就是下一个匹配出，Ctrl + W一起用
+
+Alt + 6              复制当前行
+Alt + }              向右缩进，可能需要用到Shift
+Alt + {              向左缩进
+Ctrl + F             下一个字符
+Ctrl + B             前一个字符
+Ctrl + Space         下一个单词
+Alt + Space          上一个单词
+
+Ctrl + A             行起始
+Ctrl + E             行结束
+Alt + 9              段落起始
+Alt + 0              段落结束
+Alt + ]              匹配的括弧
+Alt + -              向上滚动一行
+Alt + +              向下滚动一行
+Alt + <              不会
+Alt + >              不会
+
+Alt + M              使下一次的特殊按键显示，比如Ctrl + Q 显示 
+                     Alt + w 显示 w
+Ctrl + I             插入tab
+Ctrl + M             插入新行
+Ctrl + D             删除光标所在位置的字符
+Ctrl + H             删除光标左边的字符
+Ctrl + T             从当前光标所在位置剪切到文件结束
+
+Alt + J              自动调整整个文件
+Alt + D              统计字数，行数，字符数
+Ctrl + L             刷新
+Ctrl + Z             挂起
