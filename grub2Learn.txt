@@ -1,0 +1,27 @@
+http://blog.163.com/lqquani@126/blog/static/10556889820126810649143/
+grub2学习
+1.全新安装的Ubuntu9.10或者更高的版本，如果没有其他已经被安装的操作系统的情况下，Grub2直接启动到桌面，不显示操作系统选择菜单。
+
+2.按住Shift可以强制显示选择菜单，有的时候，快捷键是ESC。
+
+3./boot/grub/grub.cfg已经取代/boot/grub/menu.lst
+
+4.grub命令行模式下，无法运行"/find boot/grub/stage1"，Stage1.5已经被移除。
+
+5.主要的Grub2配置文件"grub.cfg"被放在/boot/grub文件夹下面，这个文件由一组脚本组成，尽量不要手动的去直接修改该文件。
+
+6.每当内核文件追加或者移除，包Grub2更新的时候，grub.cfg都会被覆盖，或者当用户运行update-grub命令。
+
+7.可行的Linux内核菜单总是通过update-grub自动生成。
+
+8.用户可以自己创建属于自己的菜单选择入口取代默认的文件。这个文件不会被覆写，默认情况下，这个文件被放置在/etc/grub.d文件夹下面，并且被命名为40_custom
+
+9.用来改变菜单显示的配置文件是grub，默认情况下被放置在/etc/default
+
+10.有多个配置文件，除了上面所说的/etc/default/grub之外，其他的被放置在/etc/grub.d
+
+11.分区计数变了，现在第一个分区是1，不再是0，第一个设备/硬盘仍然是hd0（没有变化），这个设计可以通过/boot/grub/device.map更改。
+
+12.和Windows一样，现在Grub2也可以通过运行update-grub来自动的查找其他的操作系统，同时找到的操作系统也会自动更新进Grub2菜单中。
+
+13.在运行update-grub之前，对配置文件所做的变动都会起作用。
