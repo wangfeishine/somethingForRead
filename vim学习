@@ -1,0 +1,4 @@
+usr_02.txt The first steps in Vim 总结
+    1.vim filename 创建文件
+    2.i进入INSERT模式, :set showmode ，:set noshowmode
+    3.
