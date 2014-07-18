@@ -1,0 +1,26 @@
+|02.1|	第一次运行 Vim
+        gvim file.txt
+        vim file.txt
+|02.2|	插入文本
+        i
+        :set showmode
+|02.3|	移动光标
+        h j k l
+|02.4|	删除字符
+        x
+        dd
+        删除换行符 J
+|02.5|	撤销与重做
+        u
+        :not-compatible
+        CTRL-R
+|02.6|	其它编辑命令
+        a
+        o
+        O
+        指定记数 9x 3a!<Esc>
+|02.7|	退出
+        ZZ
+        :q!
+        强制重新装载 :e!
+|02.8|	寻求帮
