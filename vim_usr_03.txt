@@ -1,43 +1,71 @@
-usr_03.txt  移动
+|03.1|	词移动
+        w W
+        b B
+        e E
+        ge gE
+|03.2|	移动到行首或行尾
+        $
+        0
+        ^
+|03.3|	移动到指定的字符
+        f
+        F
+        t
+        T
+        ;
+        ,
+|03.4|	括号匹配
+        %
+|03.5|	移动到指定的行
+        数字 + G
+        G
+        gg
+        数字 + %
+        H
+        M
+        L
+|03.6|	确定当前位置
+        CTRL-G
+        :set [no]number
+        :set [no]ruler
+|03.7|	滚屏
+        CTRL-U
+        CTRL-D
+        CTRL-E
+        CTRL-Y
+        CTRL-F
+        CTRL-B
+        zz
+        zt
+        zb
 
-02.1 第一次运行Vim
-gvim file.txt  vim file.txt
-
-02.2 插入文本
-Vim是模式编辑器：普通模式 插入模式
-：set showmode
-
-02.3 移动
-h 左
-j 下
-k 上
-l 右
-
-02.4 删除字符
-x 删除当前光标所在字符
-dd 删除整行
-J 两行合并一行，合并之后，在文本中间加空格
-
-02.5 撤销与重做
-u 撤销最后一次编辑
-连续按两次u则撤销整行编辑
-CTRL_R 重做
-连续两次CTRL_R则会重做整行编辑
-
-02.6 其他的编辑命令
-a 在光标所在处后面追加
-o 在光标所在行之下追加一行
-O 在光标所在行之上追加一行
-在命令之前加上数字，可以重复命令，例如：3a！
-
-02.7 退出
-ZZ 退出
-:q! 强制退出
-:e! 强制编辑
-
-02.8 帮助文档
-F1
-:help
-CTRL_] 进入链接
-CTRL_T 返回最开始的位置
-CTRL_O 返回之前的位置
+|03.8|	简单查找
+        /String
+        特殊含义：.*[]^%/\?~$，检索前面要加上\
+        n
+        N
+        ?word
+        :set [no]ignorecase
+        历史记录：/one /two /three <Up> <Down> /o<Up>
+        在想查找的字符之下，按住* #，这是全匹配，g* g#是部分匹配
+        /the\>
+        /\<the\>
+        :set [no]hlsearch
+        :set [no]incsearch
+        :set [no]wrapscan
+|03.9|	简单的查找模式
+        行首行尾
+         /^the$ /^th.e$   /^t\.e$
+|03.10|	使用标
+        ``
+        CTRL-O
+        CTRL-I
+        :jumps
+        有名字的标记
+        m[a-z]
+        `[a-z]
+        :marks
+	'	跳转前的光标位置
+	"	最后编辑的光标位置
+	[	最后修改的开始位置
+	]	最后修改的结束位
