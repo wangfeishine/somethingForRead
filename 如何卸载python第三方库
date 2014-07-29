@@ -1,8 +1,0 @@
-安装
-python setup.py install --record files.txt
-
-Unix卸载
-cat files.txt | xargs rm –rf
-
-Windows卸载
-FOR /F %f in (files.txt) DO del %f
