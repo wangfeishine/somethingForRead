@@ -1,0 +1,26 @@
+|06.1|	功能激活
+	:syntax enable
+	if &t_Co > 1
+	  syntax enable
+	endif
+|06.2|	颜色显示不出来或者显示出错误的颜色怎么办？
+|06.3|	使用不同的颜色
+	:colorscheme evening
+        $VIMRUNTIME/colors
+	:!mkdir ~/.vim/colors
+        :!cp $VIMRUNTIME/colors/morning.vim ~/.vim/colors/mine.vim
+	:highlight Comment ctermfg=green guifg=green
+	colorscheme mine
+	:runtime syntax/colortest.vim
+|06.4|	是否使用色彩
+	:syntax clear
+	:syntax off
+	:syntax manual
+	:set syntax=ON
+|06.5|	带颜色打印
+	:hardcopy
+	v100j:hardcopy
+	:TOhtml
+	:source $VIMRUNTIME/syntax/2html.vim
+	:write main.c.html
+|06.6|	深入阅读
