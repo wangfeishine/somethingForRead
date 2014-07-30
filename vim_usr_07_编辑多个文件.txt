@@ -1,0 +1,60 @@
+|07.1|	编辑另一个文件
+	:edit foo.txt
+	:write
+	:edit! foo.txt
+	:hide edit foo.txt
+|07.2|	文件列表
+	vim one.c two.c three.c
+	:next
+	:next!
+	:wnext
+        =
+	:write
+	:next
+	:args
+	:previous
+	:wprevious
+	:last
+	:first
+	:2next
+	:set autowrite
+	:set noautowrite
+	:args five.c six.c seven.h
+	:args *.txt
+|07.3|	从一个文件中跳到另一个文件
+	CTRL-^
+	:args one.c two.c three.c
+	:next
+	`"                      跳转到你上次离开这个文件时的位置
+	`.                      记住你最后一次修改文件的位置
+        CTRL-O 和 CTRL-I
+        :marks M                知道一个标记在什么地方
+	:marks MCP
+|07.4|	备份文件
+	:set backup
+	:set backupext=.bak
+	:set patchmode=.orig     修改之前保留一个备份
+|07.5|	文件间拷贝
+	:edit thisfile
+	/本节解释
+	vjjj$y
+        ↓↓↓↓↓↓↓↓↓↓↓
+	:edit otherfile
+	/There
+	p
+	"fyas
+	"l3Y
+	CTRL-Vjjww"by
+	"fp
+	"wdaw
+	:write >> logfile
+|07.6|	显示文件
+	vim -R file               只读模式
+	view file
+	vim -M file               禁止文件修改
+	:set modifiable
+	:set write
+|07.7|	修改文件名
+	:edit copy.c
+	:saveas move.c
+	:file move.c               改变当前文件的文件名，但不想立即保存它
