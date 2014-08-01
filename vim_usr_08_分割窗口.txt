@@ -1,0 +1,82 @@
+|08.1|	分割窗口
+	:split
+        CTRL-W w
+	:close
+        :quit
+        ZZ
+	:only
+|08.2|	用另一个文件分割窗口
+	:split two.c
+|08.3|	窗口大小
+	:new
+	:3split alpha.c
+	CTRL-W +
+	CTRL-W -
+        4 CTRL-W +
+	{height}CTRL-W _
+|08.4|	垂直分割
+	:vsplit
+	:vsplit two.c
+        :vnew
+	:vertical new
+	CTRL-W h	跳转到左边的窗口
+	CTRL-W j	跳转到下面的窗口
+	CTRL-W k	跳转到上面的窗口
+	CTRL-W l	跳转到右边的窗口
+
+	CTRL-W t	跳转到最顶上的窗口
+	CTRL-W b	跳转到最底下的窗口
+|08.5|	移动窗口
+	CTRL-W K	把当前窗口移到最上边
+	CTRL-W H	把当前窗口移到最左边
+	CTRL-W J	把当前窗口移到最下边
+	CTRL-W L	把当前窗口移到最右边
+|08.6|	对所有窗口执行命令
+	:qall
+	:wall
+	:wqall
+	:qall!
+	vim -o one.txt two.txt three.txt           "-o" 参数用于垂直分割窗口。
+       如果 Vim 已经启动了，可以使用 ":all" 命令为参数列表中的每个文件打开一个窗口。
+       ":vertical all" 以垂直分割的方法打开窗口。
+|08.7|	用 vimdiff 显示文件差异
+	vimdiff main.c~ main.c
+        "zo" 打开一个折叠。关闭使用 "zc"
+	:edit main.c
+	:vertical diffsplit main.c~ 
+	:edit main.c
+	:vertical diffpatch main.c diff
+	:set noscrollbind
+        ]c
+	[c
+	:diffupdate
+	:dp
+	:do
+|08.8|	杂项
+        'laststatus' 选项用于指定什么时候对最后一个窗口显示状态条:
+	0	永远不
+	1	只有用分割窗口的时候 (默认)
+	2	永远有
+        :tag    stag
+	:leftabove {cmd}	当前窗口的左上方
+	:aboveleft {cmd}	同上
+	:rightbelow {cmd}	当前窗口的右下方
+	:belowright {cmd}	同上
+	:topleft {cmd}		整个 Vim 窗口的最上面或者最左边
+	:botright {cmd}		整个 Vim 窗口的最下面或者最右边
+|08.9|  标签页
+	:tabedit thatfile
+        如果没有鼠标或者不想用它，可以使用 "gt" 命令。助记符: Goto Tab。
+	:tab split
+	:tab help gt
+        - 在末尾标签后面的空白处单击鼠标
+        	选择下个标签页，同 "gt"。
+
+	- 在右上角的 "X" 处单击鼠标
+        	关闭当前标签页，除非当前标签页中的改变没有保存。
+
+	- 在标签行上双击鼠标
+        	建立新标签页。
+
+	- "tabonly" 命令
+		关闭除了当前标签页以外的所有标签页，除非其它标签页中的改变没有保存。
