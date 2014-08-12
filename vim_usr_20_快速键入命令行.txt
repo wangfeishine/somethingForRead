@@ -1,0 +1,26 @@
+|20.1|	命令行编辑
+	<Left>			左移一个字符
+	<Right>			右移一个字符
+	<S-Left> 或 <C-Left>	左移一个单词
+	<S-Right> 或 <C-Right>	右移一个单词
+	CTRL-B 或 <Home>	命令行行首
+	CTRL-E 或 <End>		命令行行尾
+        CTRL-W
+        CTRL-U
+        <Insert>
+        CTRL-C 或 <Esc>
+|20.2|	命令行缩写
+|20.3|	命令行补全
+        <Tab>
+        CTRL-D
+        CTRL-L
+|20.4|	命令行历史
+        <Up>
+        <Down>
+	:se<Up>
+	:history
+	:history /
+        CTRL-P
+        CTRL-N
+|20.5|	命令行窗口
+        q:
