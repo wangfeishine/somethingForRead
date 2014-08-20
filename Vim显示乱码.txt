@@ -1,0 +1,20 @@
+在windows下面，除了Vim安装目录下面的_vimrc之外，在各自用户的[我的文档]下面还是可以有一个自己的_vimrc文件
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim7.1在windows下的编码设置。By Huadong.Liu
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"这里的字体是可以自己设置的
+set guifont=Courier_new:h11
+set guifontwide=新宋体:h11
+set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1
+if has("win32")
+  set fileencoding=chinese
+else
+  set fileencoding=utf-8
+endif
+"解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+"解决consle输出乱码
+language messages zh_CN.utf-8
