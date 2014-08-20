@@ -4,6 +4,7 @@
 " vim7.1在windows下的编码设置。By Huadong.Liu
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "这里的字体是可以自己设置的
+"在公司的日文环境下面，我设置成了MS_gothic
 set guifont=Courier_new:h11
 set guifontwide=新宋体:h11
 set encoding=utf-8
@@ -16,5 +17,7 @@ endif
 "解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+"下面这句话很重要，如果没有加的话，vim就没有颜色显示了
+source $VIM/_vimrc
 "解决consle输出乱码
 language messages zh_CN.utf-8
