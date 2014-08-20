@@ -1,0 +1,25 @@
+|12.1|	单词替换
+	:%s/four/4/g
+	:%s/\<four/4/g
+	:%s/\<four\>/4/g
+	:%s/\<four\>/4/gc
+	:%s/\<GetResp\>/GetAnswer/ge
+|12.2|	把 "Last, First" 改成 "First Last"
+	:%s/\([^,]*\), \(.*\)/\2 \1/
+|12.3|	排序
+        选中需要排序的文本，!sort
+|12.4|	反转行顺序
+	:global/^/m 0
+|12.5|	单词统计
+        选中需要统计的文本，g CTRL-G
+|12.6|	查阅 man 信息
+        K
+	:runtime! ftplugin/man.vim
+	:Man csh
+	:Man 3 echo
+	\K
+|12.7|	删除多余空格
+	:%s/\s\+$//
+|12.8|	查找单词的使用位置
+	vim `grep -l frame_counter *.c`
+	:grep error_string *.c
