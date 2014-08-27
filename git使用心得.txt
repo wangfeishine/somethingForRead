@@ -86,4 +86,18 @@
   git pull
 
 7.分支管理
-  待完成
+  切换到想要追加tag的分支上
+  git checkout dev
+  查看log，--abbrev-commit是让commitid变短更容易观察
+  git log --pretty=oneline --abbrev-commit
+  追加tag，默认是追加到最新的提交上面，可以通过追加commitid来指定追加log，-a是追加标签，-s是追加GnuPG签名（需要先有一个GPG签名）
+  git tag 【-a|s】 v1.0 【-m "COMMENT"】 【commitid】
+  删除标签
+  git tag -d v1.0
+  推送指定标签
+  git push origin v1.0
+  推送所有标签
+  git push origin --tags
+  删除已经推送到远程仓库的标签
+  git tag -d v1.0
+  git push origin :refs/tags/v1.0
