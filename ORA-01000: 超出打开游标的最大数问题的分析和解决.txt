@@ -15,7 +15,7 @@ order by  num_curs desc;
 step 3:
     查看游标执行的sql情况：
 
-select o.sid q.sql_text
+select o.sid, q.sql_text
 from v$open_cursor o, v$sql q
 where q.hash_value=o.hash_value and o.sid = 123;
 
