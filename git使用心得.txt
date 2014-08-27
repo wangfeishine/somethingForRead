@@ -1,0 +1,89 @@
+﻿昨天参照廖雪峰的博客，又重新温故了一下git的用法，今天把自己的所得写下来
+
+1.git的安装
+  在我所用的linux下面，都是预装了git软件的，对于windows来说，可以下载msygit，在windows下面利用mingwin的技术模拟一个git环境使用，而且可以使用一个不错的GUI进行操作，右键菜单也追加了相应的命令。对于远程仓库来说的话，我没有进行确认使用。
+
+2.git的配置
+  git在初期使用的时候是需要进行配置的，主要是配置用户名和email
+  git config --global user.name wangf
+  git config --global user.email wangf@liandisys.com.cn
+  这里的配置适用于这台机器上面的所有的git仓库，针对于不同的仓库实际上可以使用不同的配置，不过这点在廖老师的博客里面没有体现，所以我还需要自己去查。
+
+3.git的基础知识
+  在git中，主要有三块区域，分为【工作区】【暂存区】【仓库区】，各个操作所对应的数据流也是针对以上三个区域进行的。
+
+4.git的基本操作
+  初始化git仓库
+  git init
+  工作区====》暂存区
+  git add filename / git add .
+  暂存区====》工作区
+  git checkout -- filename
+  暂存区====》仓库区
+  git commit -m "COMMENT"
+  仓库区====》暂存区
+  git reset HEAD
+  查看当前工作区状态
+  git status
+  查看工作区和暂存区之间的差别
+  git diff
+  版本回退，一般而言，commitid只需要前7位就可以了
+  git reset --hard HEAD^ | commitid
+  日志信息，可以查看commitid
+  git log | git reflog
+  一行显示日志信息
+  git log --pretty=oneline
+  删除文件
+  git rm filename
+
+5.git分支管理
+  创建分支
+  git branch dev
+  切换分支
+  git checkout dev
+  列出所有分支
+  git branch
+  删除分支
+  git branch -d dev
+  强制删除分支
+  git branch -D dev
+  创建并切换分支
+  git checkout -b dev
+  合并到当前分支
+  git merge dev
+  不使用Fast-forward模式合并分支
+  git merge --no-ff -m "COMMENT" dev
+  查看分支图表
+  git log --graph --pretty=oneline --abbrev-commit
+  保存当前现场
+  git stash
+  查看现场
+  git stash list
+  恢复现场
+  git stash pop
+  git stash apply stash@{0}
+  删除现场
+  git stash drop stash@{0}
+
+6.git远程管理
+  绑定远程仓库
+  git remote add origin git@github：wangf/repository
+  推送到仓库，第一次需要加上-u绑定仓库
+  git push 【-u】 origin master
+  推送到仓库分支
+  git push origin dev
+  从远程仓库下载
+  git clone git@github：wangf/repository
+  查看远程仓库
+  git remote
+  查看远程仓库详细信息
+  git remote -v
+  小伙伴从远程仓库下载了代码之后，只有master分支，还需要自己关联branch分支
+  git checkout -b dev origin/dev
+  当小伙伴往branch提交代码之后，自己也需要关联远程branch分支
+  git branch --set-upstream dev origin/dev
+  从远程仓库拉代码
+  git pull
+
+7.分支管理
+  待完成
