@@ -31,3 +31,8 @@ Ctrl+Shift+DOWN             与下行互换
 Shift+Tab                   去除缩进
 Tab                         缩进
 F9                          行排序(按a-z)
+Ctrl+G                      移动到行
+
+ctrl+shift+n                打开新窗口，不是标签哦
+ctrl+shift+w                关闭窗口，所有标签
+ctrl+o                      打开
