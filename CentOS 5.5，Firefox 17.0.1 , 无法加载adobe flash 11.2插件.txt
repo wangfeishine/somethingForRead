@@ -1,35 +1,16 @@
-问题：
-firefox安装在：用户主目录/opt/firefox/
-在adobe官网上下载了了.tar.gz 格式的flash插件压缩包，把包里面的libflashplayer.so复制到~/opt/firefox/plugins/
-和~/.mozilla/plugins/ 这两个目录下，重启火狐，一直无法找到flash插件。附加组件管理器里显示没有安装过任何插件。
-但是在火狐的插件数据库文件pluginreg.dat里面却显示libflashplayer.so插件不合法(invalid):
+在Linux上使用Firefox访问网站的时候，经常探出对话框让我们安装Flash，但是使用浏览器自己去搜索安装却发现始终安装不起来。
 
-Generated File. Do not edit.
+这个时候需要去官方网站去下载最新的Linux的Flash安装包
 
-[HEADER]
-Version:0.15:$
-Arch:x86-gcc3:$
+1。下载安装包
+http://get.adobe.com/flashplayer/
+这里会自动的检测你的Linux版本
+install_flash_player_11_linux.x86_64.tar.gz
 
-[PLUGINS]
+2。解压
+tar -xzvf install_flash_player_11_linux.x86_64.tar.gz
 
-[INVALID]
-/我的主目录/opt/firefox/plugins/libflashplayer.so:$
-1358323653000:$
-/我的主目录/.mozilla/plugins/libflashplayer.so:$
-1358323679000:$
+3。参照readme进行安装
+sudo cp -r usr/* /usr
+cp libflashlayer.so ~/.mozilla/plugins
 
-请问这该怎么解决呢？小弟在此先谢过各位
-
-解答：
-我的问题出在：我的CenOS 5.5系统是64位的，但我用的firefox是32位的。我安装Flash插件的时候错误地下载了64位的.tar.gz包安装：
-install_flash_player_11_linux.x86_64.tar.gz。实际上要根据Firefox是64位还是32位来选择安装64位的还是32位的Flash插件。
-如果Firefox是32位的（例如我的：Mozilla/5.0 (X11; Linux i686 on x86_64; rv:17.0) Gecko/20100101 Firefox/17.0），不管系统
-是多少位的，都必须安装32位的Flash插件。
-蛋疼的一点是：直接从Firefox官网上下载到的linux火狐是32位，但是从adobe官网下载的Flash插件却会根据系统的位数决定是32位还是
-64位的安装包。这就导致我一直都无法加载flash插件。
-安装一个32位的flash插件后问题就解决了。
-如果觉得手动安装flash插件太麻烦，我找到了一个用yum软件源安装的教程：
-CentOS 5.5安装Flash插件的教程请参见以下网页：
-http://www.if-not-true-then-false.com/2010/install-adobe-flash-player-10-on-fedora-centos-red-hat-rhel/
-Adobe Flash Player 11.2 on Fedora 18/17, CentOS/RHEL 6.3/5.8
-同样也要注意，要根据firefox是32位还是64位来决定安装的步骤，不能根据系统的位数
