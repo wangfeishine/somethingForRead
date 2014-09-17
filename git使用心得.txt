@@ -1,4 +1,9 @@
-﻿昨天参照廖雪峰的博客，又重新温故了一下git的用法，今天把自己的所得写下来
+昨天参照廖雪峰的博客，又重新温故了一下git的用法，今天把自己的所得写下来
+
+前期工作：
+使用到github的时候，需要使用ssh-keygen命令生成rsakey
+ssh-keygen -r rsa -C "youremailname@email.com"
+然后进入自己$HOME下面的.ssh目录，将其中的id_rsa.pub复制一份到github网站中
 
 1.git的安装
   在我所用的linux下面，都是预装了git软件的，对于windows来说，可以下载msygit，在windows下面利用mingwin的技术模拟一个git环境使用，而且可以使用一个不错的GUI进行操作，右键菜单也追加了相应的命令。对于远程仓库来说的话，我没有进行确认使用。
@@ -67,13 +72,13 @@
 
 6.git远程管理
   绑定远程仓库
-  git remote add origin git@github：wangf/repository
+  git remote add origin git@github.com:wangf/repository
   推送到仓库，第一次需要加上-u绑定仓库
   git push 【-u】 origin master
   推送到仓库分支
   git push origin dev
   从远程仓库下载
-  git clone git@github：wangf/repository
+  git clone git@github.com:wangf/repository
   查看远程仓库
   git remote
   查看远程仓库详细信息
