@@ -1,0 +1,9 @@
+估计是受前两天爆出来的Bash的影响，许久也没有更新包放出的CentOS5也被推送了一个重要的更新（不得不说，CentOS确实挺负责的）。
+
+在开机更新的时候，发生了意想不到的事情，系统报错了！！
+YumRepo Error: All mirror URLs are not using ftp, http[s] or file, Eg. </HTML>/
+
+第一步：sudo yum clean all
+第二步：sudo yum update
+
+OK
