@@ -12,6 +12,7 @@ ssh-keygen -r rsa -C "youremailname@email.com"
   git在初期使用的时候是需要进行配置的，主要是配置用户名和email
   git config --global user.name wangf
   git config --global user.email wangf@liandisys.com.cn
+  配置完成之后，在用户目录下面会创建.gitconfig目录
   这里的配置适用于这台机器上面的所有的git仓库，针对于不同的仓库实际上可以使用不同的配置，不过这点在廖老师的博客里面没有体现，所以我还需要自己去查。
 
 3.git的基础知识
