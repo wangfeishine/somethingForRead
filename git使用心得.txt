@@ -6,14 +6,16 @@ ssh-keygen -r rsa -C "youremailname@email.com"
 然后进入自己$HOME下面的.ssh目录，将其中的id_rsa.pub复制一份到github网站中
 
 1.git的安装
-  在我所用的linux下面，都是预装了git软件的，对于windows来说，可以下载msygit，在windows下面利用mingwin的技术模拟一个git环境使用，而且可以使用一个不错的GUI进行操作，右键菜单也追加了相应的命令。对于远程仓库来说的话，我没有进行确认使用。
+  在我所用的linux下面，都是预装了git软件的，对于windows来说，可以下载msygit，在windows下面利用mingwin的技术模拟一个git环境使用，
+  而且可以使用一个不错的GUI进行操作，右键菜单也追加了相应的命令。对于远程仓库来说的话，我没有进行确认使用。
 
 2.git的配置
   git在初期使用的时候是需要进行配置的，主要是配置用户名和email
   git config --global user.name wangf
   git config --global user.email wangf@liandisys.com.cn
   配置完成之后，在用户目录下面会创建.gitconfig目录
-  这里的配置适用于这台机器上面的所有的git仓库，针对于不同的仓库实际上可以使用不同的配置，不过这点在廖老师的博客里面没有体现，所以我还需要自己去查。
+  这里的配置适用于这台机器上面的所有的git仓库，针对于不同的仓库实际上可以使用不同的配置，不过这点在廖老师的博客里面没有体现，
+  所以我还需要自己去查。
 
 3.git的基础知识
   在git中，主要有三块区域，分为【工作区】【暂存区】【仓库区】，各个操作所对应的数据流也是针对以上三个区域进行的。
@@ -96,7 +98,8 @@ ssh-keygen -r rsa -C "youremailname@email.com"
   git checkout dev
   查看log，--abbrev-commit是让commitid变短更容易观察
   git log --pretty=oneline --abbrev-commit
-  追加tag，默认是追加到最新的提交上面，可以通过追加commitid来指定追加log，-a是追加标签，-s是追加GnuPG签名（需要先有一个GPG签名）
+  追加tag，默认是追加到最新的提交上面，可以通过追加commitid来指定追加log，-a是追加标签，
+  -s是追加GnuPG签名（需要先有一个GPG签名）
   git tag 【-a|s】 v1.0 【-m "COMMENT"】 【commitid】
   删除标签
   git tag -d v1.0
