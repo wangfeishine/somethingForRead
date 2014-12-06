@@ -2,7 +2,7 @@
 
 前期工作：
 使用到github的时候，需要使用ssh-keygen命令生成rsakey
-ssh-keygen -r rsa -C "youremailname@email.com"
+ssh-keygen -t rsa -C "youremailname@email.com"
 然后进入自己$HOME下面的.ssh目录，将其中的id_rsa.pub复制一份到github网站中
 
 1.git的安装
