@@ -1,0 +1,33 @@
+下了一个ubuntu14.10的安装镜像iso文件，按照惯例在Windows上使用UltraISO进行U盘刻录，准备安装在老婆的笔记本电脑上面的。
+但是问题来了：
+老婆的笔记本比较旧了，所以没有UEFI模式（Ubutun14.10的启动默认开启了Selinux，据说和UEFI有关，没有深究过），这个时候还没有进入
+Ubuntu的常规安装画面就已经报错了。
+
+在网上查找资料，终于找到，说在Windows下面可以用一款叫做Win32 Disk Imager的刻录软件刻录，这个方法我没有尝试。
+第二个方法，在Linux上面使用mkusb的命令进行刻录。
+安装：
+sudo add-apt-repository ppa:mkusb/ppa
+sudo apt-get update
+sudo apt-get install mkusb
+使用：
+sudo mkusb -H ubuntu.iso
+
+（下载页面：http://releases.ubuntu.com/precise/
+64位桌面版链接：http://releases.ubuntu.com/precise/ubuntu-12.04-desktop-amd64.iso
+如果已经用开ubuntu，只需使用里面的usb启动盘制作工具即可制作 12.04的U盘启动盘
+如果在windows下， 可使用ultraiso 9.5版本，打开iso镜像， 然后找到“启动”执行“写入硬盘映射”，在“写入硬盘映射”的对话框中，
+“写入方式”选择“USB-HDD”。点击“便捷启 动”—“写入新的硬盘主引导记录”—“syslinux”那一项，然后开始写入。
+在用u盘启动进入安装界面时，按F6，把第一项“acpi=off”勾上， 这样做在安装过程中能减少很多莫名其妙的问题，
+尤其比较新的主板尤其要选上。）
+这个方法不知道可不可以。
+使用以上的方式，刻录出来的U盘，进行Ubuntu的安装完全没有问题
+
+但是有别的问题存在
+安装完毕之后，我把U盘拿到Windows上，准备进行文件从拷贝，发现容量大大缩水了。可能是刚才的命令做了什么分区隐藏吧。
+在网上找了半天容量恢复的办法，都是要下各种乱七八糟的软件，一是担心不靠谱，二是担心病毒木马。
+最后终于找到一个靠谱的办法：
+1：运行 diskpart
+2: list disk
+3: select disk 4
+4: clean
+之后就可以在磁盘管理里面进行格式化操作了。缩水的容量也回来了
