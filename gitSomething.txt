@@ -1,0 +1,3 @@
+1.现象：如果上传代码的时候出现LF will be replaced by CRLF in
+maventest01/.classpath.这样的错误
+方法：执行git config --global core.autocrlf false即可
